@@ -1,13 +1,11 @@
-<div class="registerBox">
-      <h2>Listar carros</h2>
-      <label for="list-car">Modelo do carro: </label>
-      <input id="list-car" #carModel />
-
-      <!-- (click) passes input value to add() and then clears the input -->
-      <!-- <button type="button" class="add-button" (click)="add(carModel.value); carModel.value=''">
-      Adicionar
-      </button> -->
-      <button type="button" class="add-button">
-      Listar
-      </button>
+<div class="listBox">
+      <h2>Lista de carros</h2>
+      <ul>
+            <li *ngFor="let car of cars">
+                  <p>Id: {{car.id}}</p>
+                  <p>Modelo: {{car.modelo}}</p>
+                  <p>Preço: {{car.preco}}</p>
+                  <p>Ano: {{car.ano}}</p>
+            </li>
+      </ul>
 </div>

@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { RegisterCarsComponent } from './register-cars/register-cars.component';
 import { ListCarsComponent } from './list-cars/list-cars.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,8 @@ import { ListCarsComponent } from './list-cars/list-cars.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

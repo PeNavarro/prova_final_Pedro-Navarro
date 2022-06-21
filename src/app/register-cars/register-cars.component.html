@@ -2,12 +2,15 @@
       <h2>Adicionar carro</h2>
       <label for="new-car">Modelo do carro: </label>
       <input id="new-car" #carModel />
+      
+      <label for="new-car">Preço: </label>
+      <input id="new-car" #carPrice />
+
+      <label for="new-car">Ano: </label>
+      <input id="new-car" #carYear />
 
       <!-- (click) passes input value to add() and then clears the input -->
-      <!-- <button type="button" class="add-button" (click)="add(carModel.value); carModel.value=''">
-      Adicionar
-      </button> -->
-      <button type="button" class="add-button">
+      <button type="button" class="add-button" (click)="add(carModel.value, carPrice.value, carYear.value); carModel.value=''; carPrice.value='';  carYear.value=''">
       Adicionar
       </button>
 </div>
