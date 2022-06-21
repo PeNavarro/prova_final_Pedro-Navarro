@@ -4,7 +4,6 @@ nav{
       justify-content: space-between;
       align-items: center;
       padding: 0 40px;
-      color: white;
 }
 
 ul{
@@ -22,4 +21,5 @@ a{
       text-decoration: none;
       line-height: 80px;
       cursor: pointer;
+      color: white;
 }
