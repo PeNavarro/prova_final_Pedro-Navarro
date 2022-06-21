@@ -27,47 +27,10 @@ export class CarsService {
     );
   }
 
-  getCar(id: number): Observable<Car> {
-    const url = `${this.carsUrl}/${id}`;
-    return this.http.get<Car>(url).pipe(
-      tap(_ => console.log(`fetched car id=${id}`)),
-      catchError(this.handleError<Car>(`getCar id=${id}`))
-    );
-  }
-
-  updateCar(car: Car): Observable<any> {
-    return this.http.put(this.carsUrl + "/" + car.id, car, this.httpOptions).pipe(
-      tap(_ => console.log(`updated car id=${car.id}`)),
-      catchError(this.handleError<any>('updateCar'))
-    );
-  }
-
   addCar(car: Car): Observable<Car> {
     return this.http.post<Car>(this.carsUrl, car, this.httpOptions).pipe(
       tap((newCar: Car) => console.log(`added car id=${newCar.id}`)),
       catchError(this.handleError<Car>('addCar'))
-    );
-  }
-
-  deleteCar(id: number): Observable<Car> {
-    const url = `${this.carsUrl}/${id}`;
-  
-    return this.http.delete<Car>(url, this.httpOptions).pipe(
-      tap(_ => console.log(`deleted car id=${id}`)),
-      catchError(this.handleError<Car>('deleteCar'))
-    );
-  }
-  
-  searchCars(term: string): Observable<Car[]> {
-    if (!term.trim()) {
-      // if not search term, return empty hero array.
-      return of([]);
-    }
-    return this.http.get<Car[]>(`${this.carsUrl}/?name=${term}`).pipe(
-      tap(x => x.length ?
-         console.log(`found car matching "${term}"`) :
-         console.log(`no car matching "${term}"`)),
-      catchError(this.handleError<Car[]>('searchCar', []))
     );
   }
 

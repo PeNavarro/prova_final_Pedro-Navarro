@@ -27,9 +27,4 @@ export class RegisterCarsComponent implements OnInit {
         this.cars.push(car);
       });
   }
-
-  delete(car: Car): void {
-    this.cars = this.cars.filter(h => h !== car);
-    this.carsService.deleteCar(car.id).subscribe();
-  }
 }
